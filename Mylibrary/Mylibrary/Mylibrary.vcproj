@@ -200,6 +200,14 @@
 				RelativePath=".\udp\udpsocket.cpp"
 				>
 			</File>
+			<File
+				RelativePath=".\XCritSec.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\XThreadBase.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
@@ -224,6 +232,14 @@
 			</File>
 			<File
 				RelativePath=".\udp\udpsocket.h"
+				>
+			</File>
+			<File
+				RelativePath=".\XCritSec.h"
+				>
+			</File>
+			<File
+				RelativePath=".\XThreadBase.h"
 				>
 			</File>
 		</Filter>

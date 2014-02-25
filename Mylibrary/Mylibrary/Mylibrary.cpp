@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Mylibrary.h"
+#include "XThreadBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -14,6 +15,28 @@
 CWinApp theApp;
 
 using namespace std;
+
+class  MyThread : XThreadBase
+{
+public:
+
+	MyThread()
+	{
+		m_iCnt = 0;
+		StartThread();
+	}
+
+protected:
+	virtual void ThreadProcMain(void);
+private:
+	int m_iCnt;
+};
+
+void MyThread::ThreadProcMain( void )
+{
+	m_iCnt++;
+	printf("\n%d\n",m_iCnt);
+}
 
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
@@ -30,6 +53,9 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 	{
 		// TODO: 在此处为应用程序的行为编写代码。
 	}
+
+	MyThread  ss;
+	Sleep(5000);
 
 	return nRetCode;
 }
